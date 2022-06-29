@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD9FF471-A1B9-48EB-BC0A-A1CD6A6EB4E9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseMath, Version=0.9.0.14, Culture=neutral, PublicKeyToken=c1cd1895494ed416, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaseMath.1.0.0.73\lib\BaseMath.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseUtils, Version=0.9.0.13, Culture=neutral, PublicKeyToken=c1cd1895494ed416, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaseUtils.0.9.0.13\lib\net46\BaseUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseUtilsGeo, Version=0.9.2.2, Culture=neutral, PublicKeyToken=c1cd1895494ed416, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaseUtilsGeo.1.0.0.73\lib\BaseUtilsGeo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionsWIthSatellites.cs" />
+    <Compile Include="BeamMemo.cs" />
+    <Compile Include="CoverageAreaMemo.cs" />
+    <Compile Include="GeoRegionMemo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region\BoundingAreaGeoRegionMemo.cs" />
+    <Compile Include="Region\OverallGeoRegionMemo.cs" />
+    <Compile Include="Region\SinglePointGeoRegionMemo.cs" />
+    <Compile Include="SatellitesMemo.cs" />
+    <Compile Include="SatelliteMemo.cs" />
+    <Compile Include="TransponderMemo.cs" />
+    <Compile Include="Trash.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Geolocation.Common\Geolocation.Common.csproj">
+      <Project>{c9f6bb4d-c55f-41dd-a3a7-7abcf1626a1b}</Project>
+      <Name>Geolocation.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geolocation.Domain.Core\Geolocation.Domain.Core.csproj">
+      <Project>{54d942f2-890f-49da-a560-70016c8095a0}</Project>
+      <Name>Geolocation.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geolocation.Domain.Services\Geolocation.Domain.Services.csproj">
+      <Project>{32ab0210-e03b-4a65-83e8-53b2fb65c6b9}</Project>
+      <Name>Geolocation.Domain.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
